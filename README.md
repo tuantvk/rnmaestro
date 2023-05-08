@@ -169,7 +169,7 @@ maestro studio
 
 Sau khi chạy lệnh trên maestro sẽ mở một tab trên browser, mặc định sẽ là `http://localhost:9999`.
 
-![](assets/maestro_studio.mp4)
+https://user-images.githubusercontent.com/30563960/236860303-32f80f1f-137d-46b2-852b-c48538b82383.mov
 
 
 ## Test case
@@ -207,7 +207,7 @@ maestro test .maestro/app.yaml
 maestro test .maestro
 ```
 
-![](assets/app.mp4)
+https://user-images.githubusercontent.com/30563960/236860929-96984152-5872-4d73-a5f2-4c2bd47c7a4f.mov
 
 Kết quả sẽ như sau ở terminal:
 
