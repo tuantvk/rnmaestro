@@ -1,0 +1,15 @@
+# .maestro/app.yaml
+appId: com.rnmaestro # applicationId
+---
+- launchApp
+# Kiểm tra hiện thông báo "Title is required"
+- tapOn: "Add task"
+- assertVisible: "Title is required"
+- tapOn: "OK"
+
+# Kiểm tra thêm task
+- tapOn: "Enter your title"
+- inputText: "Task from maestro"
+- hideKeyboard # Lưu ý 1
+- tapOn: "Add task"
+- assertVisible: "Task from maestro"
