@@ -150,7 +150,7 @@ git clone https://github.com/tuantvk/rnmaestro.git
 cd rnmaestro; yarn install
 ```
 
-* Pod (*dành cho iOS*)
+* Pod (**dành cho iOS**)
 
 ```sh
 npx pod-install
@@ -468,10 +468,11 @@ Maestro Cloud hỗ trợ các nền tảng CI như:
 * Facebook IDB: [https://github.com/facebook/idb](https://github.com/facebook/idb)
 * Best tips & tricks for E2E Maestro with React Native: [https://dev.to/retyui/best-tips-tricks-for-e2e-maestro-with-react-native-2kaa](https://dev.to/retyui/best-tips-tricks-for-e2e-maestro-with-react-native-2kaa)
 * Test your React Native app with Maestro: [https://dev.to/b42/test-your-react-native-app-with-maestro-5bfj](https://dev.to/b42/test-your-react-native-app-with-maestro-5bfj)
+* Streamline Your React Native Testing with Maestro: [Streamline Your React Native Testing with Maestro](https://viniciuspetrachin.medium.com/streamline-your-react-native-testing-with-maestro-bc279586125f)
 
 
 <p align="center">
-  <img style="width:430px" src="https://media.tenor.com/blHCE4Hrc20AAAAd/bravo.gif" alt="https://media.tenor.com/blHCE4Hrc20AAAAd/bravo.gif" />
+  <img style="width:400px" src="https://media.tenor.com/blHCE4Hrc20AAAAd/bravo.gif" alt="https://media.tenor.com/blHCE4Hrc20AAAAd/bravo.gif" />
 <p>
 
 Maestro cũng còn rất mới với cộng đồng kiểm thử ứng dụng di động, còn nhiều vấn đề phải chỉnh sửa, nâng cấp. Tuy nhiên, rất xứng đáng để được 1 star trên [Maestro Github](https://github.com/mobile-dev-inc/maestro) cho đội ngũ phát triển.
