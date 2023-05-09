@@ -204,7 +204,6 @@ Dựa vào chức năng của ứng dụng hiện tại, sẽ có một vài bư
 4. Nhập `title`
 5. Nhấn nút `Add task`
 6. Kiểm tra task mới đã có chưa
-7. Nội dung `TextInput` đã được xoá chưa
 
 
 ## Maestro studio
@@ -482,9 +481,9 @@ Maestro cũng còn rất mới với cộng đồng kiểm thử ứng dụng di
 
 ## Đóng góp
 
-Mọi ý kiến cũng như đóng góp luôn được chào đón. Hãy tạo [Issues](issues) hoặc [Pull requests](pulls) cho tôi.
+Mọi ý kiến cũng như đóng góp luôn được chào đón. Hãy tạo [Issues](https://github.com/tuantvk/rnmaestro/issues) hoặc [Pull requests](https://github.com/tuantvk/rnmaestro/pulls) cho tôi.
 
 
 ## License
 
-[MIT](LICENSE)
+[MIT licensed](LICENSE).
