@@ -36,6 +36,7 @@ Tôi đã từng sử dụng [Detox](https://wix.github.io/Detox/) để kiểm 
 * [Quay màn hình](#quay-màn-hình)
 * [Tags](#tags)
 * [Kiểm thử trên cloud](#kiểm-thử-trên-cloud)
+* [Ví dụ kiểm thử của Maestro](#ví-dụ-kiểm-thử-của-maestro)
 
 
 ## Maestro là cái gì ?
@@ -345,7 +346,7 @@ maestro record .maestro/app.yaml
 
 Sau khi quá trình kiểm thử hoàn tất, maestro sẽ xuất ra một video định dạng `mp4` ghi lại toàn bộ quá trình.
 
-> Hiện tại, Maestro các phiên bản `CLI 1.26.0`, `CLI 1.26.1`, `CLI 1.27.0` tôi thấy tính năng `record` đang bị lỗi trên iOS, tuy nhiên đã được fix tại commit 2bd380da5cb068da5704f313711530d89e0ba74f, nhưng chưa thấy release. Nếu bạn đang sử dụng các phiên bản trên, có sẽ tính năng quay màn hình sẽ không hoạt động (2023-05-09).
+> Hiện tại, Maestro các phiên bản `CLI 1.26.0`, `CLI 1.26.1`, `CLI 1.27.0` tôi thấy tính năng `record` đang bị lỗi trên iOS, tuy nhiên đã được fix tại commit [2bd380d](https://github.com/mobile-dev-inc/maestro/commit/2bd380da5cb068da5704f313711530d89e0ba74f), nhưng chưa thấy release. Nếu bạn đang sử dụng các phiên bản trên, có sẽ tính năng quay màn hình sẽ không hoạt động (2023-05-09).
 
 
 ## Tags
@@ -400,6 +401,23 @@ Maestro Cloud hỗ trợ các nền tảng CI như:
 | Tất cả các nền tảng CI khác | ✅ | |
 
 
+## Ví dụ kiểm thử của Maestro
+
+* Android contacts flow automation
+
+| ![Android contacts flow automation](https://i.vimeocdn.com/video/1563541340-9e646b93d630d90e1fa93b6c8d140d09a4115de74aafa491a968d0a5ec8252be-d) | 
+|:--:| 
+| *[Android contacts flow automation - maestro.mobile.dev](https://maestro.mobile.dev/examples/android-contacts-flow-automation)* |
+
+<br />
+
+* Facebook signup flow automation
+
+| ![Facebook signup flow automation](https://i.vimeocdn.com/video/1537181939-8c4e67e47ff72aa7e14642a7fc104a662a457fabc20f6ce076b571d98f497a9d-d) | 
+|:--:| 
+| *[Facebook signup flow automation - maestro.mobile.dev](https://maestro.mobile.dev/examples/facebook-signup-flow-automation)* |
+
+
 ## Tham khảo thêm
 
 * Maestro: [https://maestro.mobile.dev/](https://maestro.mobile.dev/)
@@ -413,6 +431,7 @@ Maestro Cloud hỗ trợ các nền tảng CI như:
   <img style="width:430px" src="https://media.tenor.com/blHCE4Hrc20AAAAd/bravo.gif" alt="https://media.tenor.com/blHCE4Hrc20AAAAd/bravo.gif" />
 <p>
 
+Maestro cũng còn rất mới với cộng đồng kiểm thử ứng dụng di động, còn nhiều vấn đề phải chỉnh sửa, nâng cấp. Tuy nhiên, rất xứng đáng để được 1 star trên [Maestro Github](https://github.com/mobile-dev-inc/maestro) cho đội ngũ phát triển.
 
 🎉 🎉 🎉 **Hy vọng bài viết hữu ích với mọi người! Cảm ơn !** 🎉 🎉 🎉
 
