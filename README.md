@@ -1,4 +1,4 @@
-# 🤖 Kiểm thử ứng dụng di động dễ dàng hơn với Maestro 👽
+# 🤖 Testing ứng dụng di động dễ dàng hơn với Maestro 👽
 
 <p align="center">
   <a href="https://github.com/tuantvk/rnmaestro/issues">
@@ -20,14 +20,14 @@
 | *Maestro Twitter Example - maestro.mobile.dev* |
 
 
-Tôi đã từng sử dụng [Detox](https://wix.github.io/Detox/) để kiểm thử các ứng dụng viết bằng React Native. Tại thời điểm đó Detox khá "hịn" và bá đạo, tiết kiệm được cả khối thời gian cũng như công sức của đội dev và đội kiểm thử. Tuy nhiên sau này, tôi thấy độ phức tạp, cũng như độ "khó" với các thành viên mới trong team, đó là thời điểm **Maestro** đến với tôi như một vị cứu tinh. "Xạo quần" tí thôi chứ tôi biết Maestro qua một bài viết trên trang [dev.to](https://dev.to/), nhưng team tôi "gà" là sự thật 😂.
+Tôi đã từng sử dụng [Detox](https://wix.github.io/Detox/) để testing các ứng dụng viết bằng React Native. Tại thời điểm đó Detox khá "hịn" và bá đạo, tiết kiệm được cả khối thời gian cũng như công sức của đội dev và đội tester. Tuy nhiên sau này, tôi thấy độ phức tạp, cũng như độ "khó" với các thành viên mới trong team, đó là thời điểm **Maestro** đến với tôi như một vị cứu tinh. "Xạo quần" tí thôi chứ tôi biết Maestro qua một bài viết trên trang [dev.to](https://dev.to/), nhưng team tôi "gà" là sự thật 😂.
 
 
 ### Nội dung:
 * [Maestro là cái gì ?](#maestro-là-cái-gì)
 * [Cài đặt môi trường và dự án React Native](#cài-đặt-môi-trường-và-dự-án-react-native)
 * [Cài đặt Maestro](#cài-đặt-maestro)
-* [Mô tả các bước kiểm thử](#mô-tả-các-bước-kiểm-thử)
+* [Mô tả các bước test](#mô-tả-các-bước-test)
 * [Maestro studio](#maestro-studio)
 * [Test case](#test-case)
 * [Kiểm tra phần tử bằng testID](#kiểm-tra-phần-tử-bằng-testid)
@@ -35,15 +35,15 @@ Tôi đã từng sử dụng [Detox](https://wix.github.io/Detox/) để kiểm 
 * [runFlow](#runflow)
 * [Quay màn hình](#quay-màn-hình)
 * [Tags](#tags)
-* [Kiểm thử trên cloud](#kiểm-thử-trên-cloud)
-* [Videos kiểm thử của Maestro](#videos-kiểm-thử-của-maestro)
+* [Testing trên cloud](#testing-trên-cloud)
+* [Videos testing của Maestro](#videos-testing-của-maestro)
 
 
 ## Maestro là cái gì ?
 
-Tóm cái váy lại, [Maestro](https://maestro.mobile.dev/) là một framework giúp kiểm thử giao diện người dùng (UI) đơn giản và hiệu quả. Maestro dựa trên ý tưởng từ những người đàn anh đi trước như: Appium, Espresso, UIAutomator, XCTest. Sự khác biệt chủ yếu ở đây là Maestro viết kiểm thử theo dạng Flows.
+Tóm cái váy lại, [Maestro](https://maestro.mobile.dev/) là một framework giúp testing giao diện người dùng (UI) đơn giản và hiệu quả. Maestro dựa trên ý tưởng từ những người đàn anh đi trước như: Appium, Espresso, UIAutomator, XCTest. Sự khác biệt chủ yếu ở đây là Maestro viết test theo dạng Flows.
 
-Flows là gì? Nôm na, Flows sẽ giống như một hành trình đi tìm ánh sáng phía cuối con hẻm cụt, đi từng bước từng bước qua những ngôi nhà, các bước kiểm thử được viết trong file `yaml` hoặc `yml`. Nó giống như việc ta ra lệnh cho máy biết phải làm gì và kiểm tra gì. Đọc thêm tại [Why Maestro?](https://maestro.mobile.dev/#why-maestro)
+Flows là gì? Nôm na, Flows sẽ giống như một hành trình đi tìm ánh sáng phía cuối con hẻm cụt, đi từng bước từng bước qua những ngôi nhà, các bước test được viết trong file `yaml` hoặc `yml`. Nó giống như việc ta ra lệnh cho máy biết phải làm gì và kiểm tra gì. Đọc thêm tại [Why Maestro?](https://maestro.mobile.dev/#why-maestro)
 
 Maestro hỗ trợ các nền tảng như:
 
@@ -55,13 +55,13 @@ Maestro hỗ trợ các nền tảng như:
 | Flutter      | ✅ |
 | Web Views    | ✅ |
 
-Cá nhân tôi rất thích sử dụng Maestro cho kiểm thử ứng dụng di động. Quá trình cài đặt, viết kiểm thử cũng hết sức dễ dàng với tất cả những ai chưa biết sử dụng máy tính Casio FX-570.
+Cá nhân tôi rất thích sử dụng Maestro cho testing ứng dụng di động. Quá trình cài đặt, viết test cũng hết sức dễ dàng với tất cả những ai chưa biết sử dụng máy tính Casio FX-570.
 Trong ví dụ này, tôi sẽ hướng dẫn các bạn cài đặt và viết một vài test case phổ biến. Tôi sử dụng Mac OS và ứng dụng đơn giản viết bằng React Native.
 
 
 ## Cài đặt môi trường và dự án React Native
 
-Đầu tiên, tất nhiên là bạn phải có ứng dụng cần kiểm thử rồi. Để tạo dự án React Native có thể tham khảo các bước đầy đủ tại [Setting up the development environment](https://reactnative.dev/docs/environment-setup).
+Đầu tiên, tất nhiên là bạn phải có ứng dụng cần testing rồi. Để tạo dự án React Native có thể tham khảo các bước đầy đủ tại [Setting up the development environment](https://reactnative.dev/docs/environment-setup).
 
 Giả sử bạn đã có môi trường, tiến hành khởi tạo ứng dụng:
 
@@ -187,14 +187,14 @@ brew install idb-companion
 > * Xcode khuyên nên dùng các phiên bản từ 14 trở nên.
 > * Một tin chẳng mấy vui, hiện tại, Tháng Năm 2023 Maestro chưa hỗ trợ chạy trên máy thật.
 
-Sau khi hoàn thành xong các bước trên là đã xong phần cài đặt. Bắt đầu vào phần viết test case kiểm thử.
+Sau khi hoàn thành xong các bước trên là đã xong phần cài đặt. Bắt đầu vào phần viết test case.
 
 <p align="center">
   <img style="width:450px" src="https://media1.giphy.com/media/26u4lOMA8JKSnL9Uk/giphy.gif" alt="https://media1.giphy.com/media/26u4lOMA8JKSnL9Uk/giphy.gif" />
 <p>
 
 
-## Mô tả các bước kiểm thử
+## Mô tả các bước test
 
 Dựa vào chức năng của ứng dụng hiện tại, sẽ có một vài bước như sau:
 
@@ -264,7 +264,7 @@ Trong terminal sẽ như hình dưới:
   <img style="width:700px" src="assets/logs.png" alt="tuantvk - maestro logs" />
 <p>
 
-Để tự động chạy kiểm thử lại mỗi khi có thay đổi, bạn có thể chạy test với câu lệnh:
+Để tự động testing lại mỗi khi có thay đổi, bạn có thể chạy test với câu lệnh:
 
 ```sh
 maestro test -c .maestro/app.yaml
@@ -286,7 +286,7 @@ Xem chi tiết tại [Maestro - Commands](https://maestro.mobile.dev/api-referen
 
 ### Kiểm tra phần tử bằng `testID`
 
-Trong ví dụ ở trên, tôi đã hướng dẫn viết flow bằng cách gọi trực tiếp vào các nội dung có trong màn hình. Tuy nhiên, sẽ có nhiều phần kiểm thử có nội dung thay đổi sau mỗi lần thao tác, do đó bạn cần phải sử dụng `testID` để xác định như: [View](https://reactnative.dev/docs/view#testid), [Button](https://reactnative.dev/docs/button#testid), [Text](https://reactnative.dev/docs/text#testid), [Image](https://reactnative.dev/docs/image#testid).
+Trong ví dụ ở trên, tôi đã hướng dẫn viết flow bằng cách gọi trực tiếp vào các nội dung có trong màn hình. Tuy nhiên, sẽ có nhiều phần testing có nội dung thay đổi sau mỗi lần thao tác, do đó bạn cần phải sử dụng `testID` để xác định như: [View](https://reactnative.dev/docs/view#testid), [Button](https://reactnative.dev/docs/button#testid), [Text](https://reactnative.dev/docs/text#testid), [Image](https://reactnative.dev/docs/image#testid).
 
 Ví dụ:
 
@@ -331,7 +331,7 @@ env:
 - launchApp
 ```
 
-Bạn muốn chạy kiểm thử từ `scripts` của `package.json` có thể config:
+Bạn muốn chạy test từ `scripts` của `package.json` có thể config:
 
 ```json
 {
@@ -348,7 +348,7 @@ Bạn muốn chạy kiểm thử từ `scripts` của `package.json` có thể c
 * `com.rnmaestro.dev` dành cho môi trường dev
 * `com.rnmaestro` dành cho môi trường production
 
-Chạy kiểm thử:
+Chạy test:
 
 ```sh
 yarn run test-prod .maestro/app.yaml
@@ -357,7 +357,7 @@ yarn run test-prod .maestro/app.yaml
 
 ### runFlow
 
-Nếu như bạn không muốn bị trùng lặp các bước, phải viết đi viết lại 1 đoạn kiểm thử nào đó, bạn có thể sử dụng `runFlow` để thực thi một luồng khác. Ví dụ:
+Nếu như bạn không muốn bị trùng lặp các bước, phải viết đi viết lại 1 đoạn test nào đó, bạn có thể sử dụng `runFlow` để thực thi một luồng khác. Ví dụ:
 
 ```yaml
 # Login.yaml
@@ -375,7 +375,7 @@ appId: com.example.app
 # Settings.yaml
 appId: com.example.app
 ---
-- runFlow: Login.yaml # Chạy kiểm thử từ file `Login.yaml`
+- runFlow: Login.yaml # Testing từ file `Login.yaml`
 - tapOn: Settings
 - assertVisible: Switch to dark mode
 ```
@@ -385,20 +385,20 @@ Xem thêm tại [Maestro - runFlow](https://maestro.mobile.dev/api-reference/com
 
 ### Quay màn hình
 
-Để quay lại quá trình kiểm thử tôi sử dụng lệnh:
+Để quay lại quá trình testing tôi sử dụng lệnh:
 
 ```sh
 maestro record .maestro/app.yaml
 ```
 
-Sau khi quá trình kiểm thử hoàn tất, maestro sẽ xuất ra một video định dạng `mp4` ghi lại toàn bộ quá trình.
+Sau khi quá trình testing hoàn tất, maestro sẽ xuất ra một video định dạng `mp4` ghi lại toàn bộ quá trình.
 
 > Hiện tại, Maestro các phiên bản `CLI 1.26.0`, `CLI 1.26.1`, `CLI 1.27.0` tôi thấy tính năng `record` đang bị lỗi trên iOS, tuy nhiên đã được fix tại commit [2bd380d](https://github.com/mobile-dev-inc/maestro/commit/2bd380da5cb068da5704f313711530d89e0ba74f), nhưng chưa thấy release. Nếu bạn đang sử dụng các phiên bản trên, có thể tính năng quay màn hình sẽ không hoạt động (Ngày cập nhật: 2023-05-09).
 
 
 ## Tags
 
-Trong trường hợp bạn chỉ kiểm thử (`--include-tags`) hoặc loại bỏ (`--exclude-tags`) những file nào đó, bạn có thể sử dụng tags. Ví dụ tôi có 2 file:
+Trong trường hợp bạn chỉ testing (`--include-tags`) hoặc loại bỏ (`--exclude-tags`) những file nào đó, bạn có thể sử dụng tags. Ví dụ tôi có 2 file:
 
 ```yaml
 # flowA.yaml
@@ -430,7 +430,7 @@ Một số kịch bản sẽ như sau:
 Xem thêm [Maestro - Tags](https://maestro.mobile.dev/cli/tags).
 
 
-## Kiểm thử trên cloud
+## Testing trên cloud
 
 Ta có thể chạy Maestro Flows trên cloud qua tài liệu [Maestro Cloud Documentation](https://cloud.mobile.dev/).
 
@@ -448,7 +448,7 @@ Maestro Cloud hỗ trợ các nền tảng CI như:
 | Tất cả các nền tảng CI khác | ✅ | |
 
 
-## Videos kiểm thử của Maestro
+## Videos testing của Maestro
 
 * [Android contacts flow automation - maestro.mobile.dev](https://maestro.mobile.dev/examples/android-contacts-flow-automation)
 
@@ -475,7 +475,7 @@ Maestro Cloud hỗ trợ các nền tảng CI như:
   <img style="width:400px" src="https://media.tenor.com/blHCE4Hrc20AAAAd/bravo.gif" alt="https://media.tenor.com/blHCE4Hrc20AAAAd/bravo.gif" />
 <p>
 
-Maestro cũng còn rất mới với cộng đồng kiểm thử ứng dụng di động, còn nhiều vấn đề phải chỉnh sửa, nâng cấp. Tuy nhiên, rất xứng đáng để được 1 star trên [Maestro Github](https://github.com/mobile-dev-inc/maestro) cho đội ngũ phát triển.
+Maestro cũng còn rất mới với cộng đồng testing ứng dụng di động, còn nhiều vấn đề phải chỉnh sửa, nâng cấp. Tuy nhiên, rất xứng đáng để được 1 star trên [Maestro Github](https://github.com/mobile-dev-inc/maestro) cho đội ngũ phát triển.
 
 🎉 🎉 🎉 **Hy vọng bài viết hữu ích với mọi người! Cảm ơn !** 🎉 🎉 🎉
 
