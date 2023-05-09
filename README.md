@@ -53,7 +53,7 @@ Giả sử bạn đã có môi trường, tiến hành khởi tạo ứng dụng
 npx react-native init RNMaestro
 ```
 
-Sau khi khởi tạo xong bạn để ý **applicationId** của Android (`android/app/build.gradle -> applicationId`) và iOS (`Dự án trong Xcode -> Tab General -> Bundle Identifier`). Bạn có thể tuỳ ý chỉnh sửa chúng để sử dụng sau này, trong hướng dẫn này tôi chỉnh sửa Android và iOS thành `com.rnmaestro`.
+Sau khi khởi tạo xong bạn để ý **applicationId** của Android (`android/app/build.gradle -> applicationId`) và iOS (`Dự án trong Xcode -> Signing & Capabilities -> Bundle Identifier`). Bạn có thể tuỳ ý chỉnh sửa chúng để sử dụng sau này, trong hướng dẫn này tôi chỉnh sửa Android và iOS thành `com.rnmaestro`.
 
 Tại file `App.tsx` của dự án, bạn copy & paste đoạn code phía dưới.
 
@@ -350,13 +350,17 @@ tags:
   - dev
 ```
 
+```sh
+maestro test --include-tags=dev --exclude-tags=pull-request workspaceFolder/
+```
+
 Một số kịch bản sẽ như sau:
 
-* Chạy `--include-tags=dev`, flowA và flowB sẽ chạy.
-* Chạy `--include-tags=dev,pull-request`, cả 2 file sẽ chạy.
-* Chạy `--exclude-tags=pull-request`, chỉ flowB chạy.
-* Chạy `--exclude-tags=dev` không file nào chạy.
-* Chạy `--include-tags=dev --exclude-tags=pull-request`, chỉ flowB chạy.
+* `--include-tags=dev`, flowA và flowB sẽ chạy.
+* `--include-tags=dev,pull-request`, cả 2 file sẽ chạy.
+* `--exclude-tags=pull-request`, chỉ flowB chạy.
+* `--exclude-tags=dev`, không file nào chạy.
+* `--include-tags=dev --exclude-tags=pull-request`, chỉ flowB chạy.
 
 Xem thêm [Maestro - Tags](https://maestro.mobile.dev/cli/tags).
 

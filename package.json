@@ -7,7 +7,9 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "$HOME/.maestro/bin/maestro test",
+    "test-dev": "yarn test -e APP_ID=com.rnmaestro.dev",
+    "test-prod": "yarn test -e APP_ID=com.rnmaestro"
   },
   "dependencies": {
     "react": "18.2.0",
