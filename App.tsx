@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
-import { Alert, SafeAreaView, TextInput, Button, FlatList } from 'react-native';
+import {
+  View,
+  Alert,
+  SafeAreaView,
+  TextInput,
+  Button,
+  FlatList,
+} from 'react-native';
 
 const TASKS = Array.from({ length: 25 }, (_, i) => ({ title: 'Task ' + i }));
 
@@ -30,16 +37,20 @@ const App = () => {
 
   return (
     <SafeAreaView>
-      <TextInput
-        value={title}
-        placeholder="Enter your title"
-        onChangeText={setTitle}
-      />
-      <Button testID="btn_add_task" title="Add task" onPress={addTask} />
       <FlatList
         data={tasks}
         renderItem={renderItem}
         keyExtractor={keyExtractor}
+        ListHeaderComponent={
+          <View>
+            <TextInput
+              value={title}
+              placeholder="Enter your title"
+              onChangeText={setTitle}
+            />
+            <Button testID="btn_add_task" title="Add task" onPress={addTask} />
+          </View>
+        }
       />
     </SafeAreaView>
   );

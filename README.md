@@ -76,7 +76,14 @@ Tại file `App.tsx` của dự án, bạn copy & paste đoạn code phía dư�
 ```js
 // App.tsx
 import React, { useState } from 'react';
-import { Alert, SafeAreaView, TextInput, Button, FlatList } from 'react-native';
+import {
+  View,
+  Alert,
+  SafeAreaView,
+  TextInput,
+  Button,
+  FlatList,
+} from 'react-native';
 
 const TASKS = Array.from({ length: 25 }, (_, i) => ({ title: 'Task ' + i }));
 
@@ -107,16 +114,20 @@ const App = () => {
 
   return (
     <SafeAreaView>
-      <TextInput
-        value={title}
-        placeholder="Enter your title"
-        onChangeText={setTitle}
-      />
-      <Button testID="btn_add_task" title="Add task" onPress={addTask} />
       <FlatList
         data={tasks}
         renderItem={renderItem}
         keyExtractor={keyExtractor}
+        ListHeaderComponent={
+          <View>
+            <TextInput
+              value={title}
+              placeholder="Enter your title"
+              onChangeText={setTitle}
+            />
+            <Button testID="btn_add_task" title="Add task" onPress={addTask} />
+          </View>
+        }
       />
     </SafeAreaView>
   );
@@ -188,16 +199,19 @@ Sau khi hoàn thành xong các bước trên là đã xong phần cài đặt. B
 Dựa vào chức năng của ứng dụng hiện tại, sẽ có một vài bước như sau:
 
 1. Mở ứng dụng lên
-2. Nhập `title`
-3. Kiểm tra có nội dung không
-4. Nhấn nút `Add task`
-5. Kiểm tra task mới đã có chưa
-6. Nội dung `TextInput` đã được xoá chưa
+2. Nhấn nút `Add task` xem đã kiểm tra rỗng `TextInput` chưa
+3. Kiểm tra thông báo nếu rỗng
+4. Nhập `title`
+5. Nhấn nút `Add task`
+6. Kiểm tra task mới đã có chưa
+7. Nội dung `TextInput` đã được xoá chưa
 
 
 ## Maestro studio
 
-Để nhanh chóng lấy được phần tử trong ứng dụng hoặc chạy trực tiếp các câu lệnh trên trình duyệt, ta có thể sử dụng **Maestro studio**.
+<figure><img src="https://raw.githubusercontent.com/mobile-dev-inc/maestro-docs/main/.gitbook/assets/Screenshot%202023-03-10%20at%2013.23.54.png" alt=""><figcaption></figcaption></figure>
+
+Để dễ dàng xem được phần tử trong ứng dụng hoặc chạy trực tiếp các câu lệnh trên trình duyệt, ta có thể sử dụng **Maestro studio**.
 
 ```sh
 maestro studio
@@ -364,7 +378,7 @@ appId: com.example.app
 ---
 - runFlow: Login.yaml # Chạy kiểm thử từ file `Login.yaml`
 - tapOn: Settings
-- assertVisible: "Switch to dark mode"
+- assertVisible: Switch to dark mode
 ```
 
 Xem thêm tại [Maestro - runFlow](https://maestro.mobile.dev/api-reference/commands/runflow).
