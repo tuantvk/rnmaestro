@@ -43,7 +43,7 @@ Tôi đã từng sử dụng [Detox](https://wix.github.io/Detox/) để kiểm 
 
 Tóm cái váy lại, [Maestro](https://maestro.mobile.dev/) là một framework giúp kiểm thử giao diện người dùng (UI) đơn giản và hiệu quả. Maestro dựa trên ý tưởng từ những người đàn anh đi trước như: Appium, Espresso, UIAutomator, XCTest. Sự khác biệt chủ yếu ở đây là Maestro viết kiểm thử theo dạng Flows.
 
-Flows là gì? Nôm na, Flows sẽ giống như một hành trình đi tìm ánh sáng phía cuối con hẻm cụt, đi từng bước từng bước qua những ngôi nhà, các bước kiểm thử được viết trong file `yaml` hoặc `yml`. Nó giống như việc ta ra lệnh cho máy biết phải làm gì và kiểm tra gì. Đọc thêm tại [Why Maestro?](https://maestro.mobile.dev/#why-maestro).
+Flows là gì? Nôm na, Flows sẽ giống như một hành trình đi tìm ánh sáng phía cuối con hẻm cụt, đi từng bước từng bước qua những ngôi nhà, các bước kiểm thử được viết trong file `yaml` hoặc `yml`. Nó giống như việc ta ra lệnh cho máy biết phải làm gì và kiểm tra gì. Đọc thêm tại [Why Maestro?](https://maestro.mobile.dev/#why-maestro)
 
 Maestro hỗ trợ các nền tảng như:
 
@@ -125,7 +125,7 @@ const App = () => {
 export default App;
 ```
 
-Hoặc bạn có thể sử dụng dự án của tôi (*bỏ qua bước dưới nếu không cần*):
+Hoặc bạn có thể sử dụng dự án của tôi (**bỏ qua bước dưới nếu không cần**):
 
 * Clone dự án
 
@@ -136,7 +136,7 @@ git clone https://github.com/tuantvk/rnmaestro.git
 * Cài đặt packages
 
 ```sh
-yarn install
+cd rnmaestro; yarn install
 ```
 
 * Pod (*dành cho iOS*)
@@ -166,7 +166,7 @@ maestro -v
 Nếu thấy trả về các số dạng `vi.xxx.com` (ví dụ: 1.27.0) là đã thành công!
 Trong trường hợp máy báo `zsh: command not found: maestro`, hãy tắt terminal đi rồi mở lại.
 
-Để chạy trên máy ảo của **iOS**, cần cài đặt thêm [Facebook IDB](https://fbidb.io/):
+Để chạy trên máy ảo trên **iOS**, cần cài đặt thêm [Facebook IDB](https://fbidb.io/):
 
 ```sh
 brew tap facebook/fb
@@ -197,13 +197,13 @@ Dựa vào chức năng của ứng dụng hiện tại, sẽ có một vài bư
 
 ## Maestro studio
 
-Để cho nhanh chóng lấy được của phần tử trong ứng dụng, ta có thể sử dụng **Maestro studio** để xem chi tiết, cũng như xem được Commands gợi ý.
+Để nhanh chóng lấy được phần tử trong ứng dụng hoặc chạy trực tiếp các câu lệnh trên trình duyệt, ta có thể sử dụng **Maestro studio**.
 
 ```sh
 maestro studio
 ```
 
-Sau khi chạy lệnh trên maestro sẽ mở một tab trên browser, mặc định sẽ là `http://localhost:9999`.
+Sau khi chạy lệnh trên maestro sẽ mở một tab trên trình duyệt, mặc định sẽ là `http://localhost:9999`.
 
 https://user-images.githubusercontent.com/30563960/236864010-3700e3c4-9fb8-4cee-bf59-b2755b3ae273.mp4
 
