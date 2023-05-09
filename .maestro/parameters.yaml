@@ -1,4 +1,7 @@
 # .maestro/parameters.yaml
+# Khi chạy file này bạn cần truyền params cho nó
+# Ví dụ:
+# maestro test -e APP_ID=com.rnmaestro TITLE="This is title" .maestro/parameters.yaml
 appId: ${APP_ID} # applicationId
 ---
 - launchApp
