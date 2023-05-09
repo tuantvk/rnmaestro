@@ -36,7 +36,7 @@ Tôi đã từng sử dụng [Detox](https://wix.github.io/Detox/) để kiểm 
 * [Quay màn hình](#quay-màn-hình)
 * [Tags](#tags)
 * [Kiểm thử trên cloud](#kiểm-thử-trên-cloud)
-* [Ví dụ kiểm thử của Maestro](#ví-dụ-kiểm-thử-của-maestro)
+* [Videos kiểm thử của Maestro](#videos-kiểm-thử-của-maestro)
 
 
 ## Maestro là cái gì ?
@@ -225,7 +225,7 @@ maestro test .maestro
 
 https://user-images.githubusercontent.com/30563960/236864158-dbf562bc-1a98-4352-972a-e16ff68b8f3b.mp4
 
-Kết quả sẽ như sau ở terminal:
+Trong terminal sẽ như hình dưới:
 
 <p>
   <img style="width:700px" src="assets/logs.png" alt="tuantvk - maestro logs" />
@@ -401,21 +401,17 @@ Maestro Cloud hỗ trợ các nền tảng CI như:
 | Tất cả các nền tảng CI khác | ✅ | |
 
 
-## Ví dụ kiểm thử của Maestro
+## Videos kiểm thử của Maestro
 
-* Android contacts flow automation
+* [Android contacts flow automation - maestro.mobile.dev](https://maestro.mobile.dev/examples/android-contacts-flow-automation)
 
-| ![Android contacts flow automation](https://i.vimeocdn.com/video/1563541340-9e646b93d630d90e1fa93b6c8d140d09a4115de74aafa491a968d0a5ec8252be-d) | 
-|:--:| 
-| *[Android contacts flow automation - maestro.mobile.dev](https://maestro.mobile.dev/examples/android-contacts-flow-automation)* |
+[![Android contacts flow automation](https://i.vimeocdn.com/video/1563541340-9e646b93d630d90e1fa93b6c8d140d09a4115de74aafa491a968d0a5ec8252be-d)](https://player.vimeo.com/video/779079600?h=0b1fec8f26)
 
 <br />
 
-* Facebook signup flow automation
+* [Facebook signup flow automation - maestro.mobile.dev](https://maestro.mobile.dev/examples/facebook-signup-flow-automation)
 
-| ![Facebook signup flow automation](https://i.vimeocdn.com/video/1537181939-8c4e67e47ff72aa7e14642a7fc104a662a457fabc20f6ce076b571d98f497a9d-d) | 
-|:--:| 
-| *[Facebook signup flow automation - maestro.mobile.dev](https://maestro.mobile.dev/examples/facebook-signup-flow-automation)* |
+[![Facebook signup flow automation](https://i.vimeocdn.com/video/1537181939-8c4e67e47ff72aa7e14642a7fc104a662a457fabc20f6ce076b571d98f497a9d-d)](https://player.vimeo.com/video/765491505?h=21d7adf282)
 
 
 ## Tham khảo thêm
