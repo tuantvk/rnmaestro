@@ -211,7 +211,7 @@ appId: com.rnmaestro # applicationId
 ```
 
 > **Lưu ý 1**:
-> Trên iOS `hideKeyboard` có thể không ẩn được bàn phím, do vậy tài liệu hướng dẫn khuyên nên dụng `tapOn` nhấn ra ngoài để có thể tắt được bàn phím. Xem thêm [iOS implementation caveat](https://maestro.mobile.dev/api-reference/commands/hidekeyboard#ios-implementation-caveat).
+> Trên iOS `hideKeyboard` có thể không ẩn được bàn phím, do vậy, tài liệu hướng dẫn khuyên nên sử dụng `tapOn` nhấn ra ngoài để có thể tắt được bàn phím. Xem thêm [iOS implementation caveat](https://maestro.mobile.dev/api-reference/commands/hidekeyboard#ios-implementation-caveat).
 
 Để chạy file test case tôi sử dụng lệnh:
 
@@ -220,7 +220,7 @@ appId: com.rnmaestro # applicationId
 maestro test .maestro/app.yaml
 # hoặc
 # Chạy nhiều file trong thư mục
-maestro test .maestro
+maestro test .maestro/
 ```
 
 https://user-images.githubusercontent.com/30563960/236864158-dbf562bc-1a98-4352-972a-e16ff68b8f3b.mp4
@@ -237,7 +237,19 @@ Trong terminal sẽ như hình dưới:
 maestro test -c .maestro/app.yaml
 ```
 
-Xem thêm các câu lệnh kiểm thử: [Maestro - Commands](https://maestro.mobile.dev/api-reference/commands).
+**Commands**
+
+| | | | |
+| ---- | ---- | ---- | ---- |
+| assertVisible | assertNotVisible | assertTrue | back |
+| clearKeychain | clearState | copyTextFrom | evalScript |
+| eraseText | extendedWaitUntil | hideKeyboard | inputText |
+| launchApp | openLink | pressKey | pasteText |
+| repeat | runFlow | runScript | scroll |
+| scrollUntilVisible | setLocation | stopApp | swipe |
+| takeScreenshot | tapOn | travel | waitForAnimationToEnd |
+
+Xem chi tiết tại [Maestro - Commands](https://maestro.mobile.dev/api-reference/commands).
 
 ### Kiểm tra phần tử bằng `testID`
 
@@ -298,8 +310,10 @@ Bạn muốn chạy kiểm thử từ `scripts` của `package.json` có thể c
 }
 ```
 
-* `com.rnmaestro.dev`: dành cho môi trường dev
-* `com.rnmaestro`: dành cho môi trường production
+Ở đây, tôi ví dụ có 2 môi trường là `dev` và `production`.
+
+* `com.rnmaestro.dev` dành cho môi trường dev
+* `com.rnmaestro` dành cho môi trường production
 
 Chạy kiểm thử:
 
@@ -346,7 +360,7 @@ maestro record .maestro/app.yaml
 
 Sau khi quá trình kiểm thử hoàn tất, maestro sẽ xuất ra một video định dạng `mp4` ghi lại toàn bộ quá trình.
 
-> Hiện tại, Maestro các phiên bản `CLI 1.26.0`, `CLI 1.26.1`, `CLI 1.27.0` tôi thấy tính năng `record` đang bị lỗi trên iOS, tuy nhiên đã được fix tại commit [2bd380d](https://github.com/mobile-dev-inc/maestro/commit/2bd380da5cb068da5704f313711530d89e0ba74f), nhưng chưa thấy release. Nếu bạn đang sử dụng các phiên bản trên, có sẽ tính năng quay màn hình sẽ không hoạt động (2023-05-09).
+> Hiện tại, Maestro các phiên bản `CLI 1.26.0`, `CLI 1.26.1`, `CLI 1.27.0` tôi thấy tính năng `record` đang bị lỗi trên iOS, tuy nhiên đã được fix tại commit [2bd380d](https://github.com/mobile-dev-inc/maestro/commit/2bd380da5cb068da5704f313711530d89e0ba74f), nhưng chưa thấy release. Nếu bạn đang sử dụng các phiên bản trên, có thể tính năng quay màn hình sẽ không hoạt động (Ngày cập nhật: 2023-05-09).
 
 
 ## Tags
