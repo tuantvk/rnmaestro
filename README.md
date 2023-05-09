@@ -468,7 +468,7 @@ Maestro Cloud hỗ trợ các nền tảng CI như:
 * Facebook IDB: [https://github.com/facebook/idb](https://github.com/facebook/idb)
 * Best tips & tricks for E2E Maestro with React Native: [https://dev.to/retyui/best-tips-tricks-for-e2e-maestro-with-react-native-2kaa](https://dev.to/retyui/best-tips-tricks-for-e2e-maestro-with-react-native-2kaa)
 * Test your React Native app with Maestro: [https://dev.to/b42/test-your-react-native-app-with-maestro-5bfj](https://dev.to/b42/test-your-react-native-app-with-maestro-5bfj)
-* Streamline Your React Native Testing with Maestro: [Streamline Your React Native Testing with Maestro](https://viniciuspetrachin.medium.com/streamline-your-react-native-testing-with-maestro-bc279586125f)
+* Streamline Your React Native Testing with Maestro: [https://viniciuspetrachin.medium.com/streamline-your-react-native-testing-with-maestro-bc279586125f](https://viniciuspetrachin.medium.com/streamline-your-react-native-testing-with-maestro-bc279586125f)
 
 
 <p align="center">
