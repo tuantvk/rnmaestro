@@ -1,4 +1,19 @@
-# Kiểm thử ứng dụng di động dễ dàng hơn với Maestro
+# 🤖 Kiểm thử ứng dụng di động dễ dàng hơn với Maestro 👽
+
+<p align="center">
+  <a href="https://github.com/tuantvk/rnmaestro/issues">
+    <img src="https://img.shields.io/github/issues/tuantvk/rnmaestro.svg" alt="issues" />
+  </a>
+  <a href="#">
+    <img src="https://img.shields.io/github/forks/tuantvk/rnmaestro.svg" alt="forks" />
+  </a>
+  <a href="#">
+    <img src="https://img.shields.io/github/stars/tuantvk/rnmaestro.svg" alt="stars" />
+  </a>
+  <a href="https://github.com/tuantvk/rnmaestro/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/tuantvk/rnmaestro.svg" alt="LICENSE" />
+  </a>
+</p>
 
 | ![Maestro Twitter Example](https://559345148-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2Fn5KVIOjVkVjYRyVWZ0yT%2Fuploads%2FBdkVbb4VQTkL4zLm6nvm%2Ftwitter_continuous_v3_fast.gif?alt=media&token=8a812b85-3b44-44f0-9137-3e74293b1acc) | 
 |:--:| 
@@ -138,7 +153,7 @@ brew install idb-companion
 ```
 
 > * Xcode khuyên nên dùng các phiên bản từ 14 trở nên.
-> * Một tin chẳng mấy vui, hiện tại Tháng Năm 2023 Maestro chưa hỗ trợ chạy trên máy thật.
+> * Một tin chẳng mấy vui, hiện tại, Tháng Năm 2023 Maestro chưa hỗ trợ chạy trên máy thật.
 
 Sau khi hoàn thành xong các bước trên là đã xong phần cài đặt. Bắt đầu vào phần viết test case kiểm thử.
 
@@ -225,7 +240,7 @@ Xem thêm các câu lệnh kiểm thử: [Maestro - Commands](https://maestro.mo
 
 ### Kiểm tra phần tử bằng `testID`
 
-Trong ví dụ ở trên tôi đã hướng dẫn viết Flows bằng cách gọi trực tiếp vào các nội dung có trong màn hình. Tuy nhiên sẽ có nhiều phần kiểm thử có nội dung thay đổi sau mỗi lần thao tác, do đó bạn cần phải sử dụng `testID` để xác định. Ví dụ: [View](https://reactnative.dev/docs/view#testid), [Button](https://reactnative.dev/docs/button#testid), [Text](https://reactnative.dev/docs/text#testid), [Image](https://reactnative.dev/docs/image#testid).
+Trong ví dụ ở trên tôi đã hướng dẫn viết flow bằng cách gọi trực tiếp vào các nội dung có trong màn hình. Tuy nhiên sẽ có nhiều phần kiểm thử có nội dung thay đổi sau mỗi lần thao tác, do đó bạn cần phải sử dụng `testID` để xác định. Ví dụ: [View](https://reactnative.dev/docs/view#testid), [Button](https://reactnative.dev/docs/button#testid), [Text](https://reactnative.dev/docs/text#testid), [Image](https://reactnative.dev/docs/image#testid).
 
 Ví dụ:
 
@@ -244,7 +259,7 @@ appId: com.rnmaestro # applicationId
 
 ### Sử dụng biến
 
-Trong trường hợp cần truyền các biến từ bên ngoài vào file Flows `yaml`, ta có thể truyền theo dạng qua các tham số:
+Trong trường hợp cần truyền các biến từ bên ngoài vào file flow, ta có thể truyền theo dạng qua các tham số:
 
 ```sh
 maestro test -e APP_ID=com.rnmaestro .maestro/app.yaml
@@ -329,6 +344,8 @@ maestro record .maestro/app.yaml
 ```
 
 Sau khi quá trình kiểm thử hoàn tất, maestro sẽ xuất ra một video định dạng `mp4` ghi lại toàn bộ quá trình.
+
+> Hiện tại, Maestro các phiên bản `CLI 1.26.0`, `CLI 1.26.1`, `CLI 1.27.0` tôi thấy tính năng `record` đang bị lỗi trên iOS, tuy nhiên đã được fix tại commit 2bd380da5cb068da5704f313711530d89e0ba74f, nhưng chưa thấy release. Nếu bạn đang sử dụng các phiên bản trên, có sẽ tính năng quay màn hình sẽ không hoạt động (2023-05-09).
 
 
 ## Tags
