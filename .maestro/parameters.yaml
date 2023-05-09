@@ -1,0 +1,7 @@
+# .maestro/parameters.yaml
+appId: ${APP_ID} # applicationId
+---
+- launchApp
+- tapOn: "Enter your title"
+- inputText: ${TITLE}
+- assertVisible: ${TITLE}

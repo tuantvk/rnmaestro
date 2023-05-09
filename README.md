@@ -125,6 +125,26 @@ const App = () => {
 export default App;
 ```
 
+Hoặc bạn có thể sử dụng dự án của tôi (*bỏ qua bước dưới nếu không cần*):
+
+* Clone dự án
+
+```sh
+git clone https://github.com/tuantvk/rnmaestro.git
+```
+
+* Cài đặt packages
+
+```sh
+yarn install
+```
+
+* Pod (*dành cho iOS*)
+
+```sh
+npx pod-install
+```
+
 
 ## Cài đặt Maestro
 
@@ -253,7 +273,7 @@ Xem chi tiết tại [Maestro - Commands](https://maestro.mobile.dev/api-referen
 
 ### Kiểm tra phần tử bằng `testID`
 
-Trong ví dụ ở trên tôi đã hướng dẫn viết flow bằng cách gọi trực tiếp vào các nội dung có trong màn hình. Tuy nhiên sẽ có nhiều phần kiểm thử có nội dung thay đổi sau mỗi lần thao tác, do đó bạn cần phải sử dụng `testID` để xác định. Ví dụ: [View](https://reactnative.dev/docs/view#testid), [Button](https://reactnative.dev/docs/button#testid), [Text](https://reactnative.dev/docs/text#testid), [Image](https://reactnative.dev/docs/image#testid).
+Trong ví dụ ở trên, tôi đã hướng dẫn viết flow bằng cách gọi trực tiếp vào các nội dung có trong màn hình. Tuy nhiên, sẽ có nhiều phần kiểm thử có nội dung thay đổi sau mỗi lần thao tác, do đó bạn cần phải sử dụng `testID` để xác định như: [View](https://reactnative.dev/docs/view#testid), [Button](https://reactnative.dev/docs/button#testid), [Text](https://reactnative.dev/docs/text#testid), [Image](https://reactnative.dev/docs/image#testid).
 
 Ví dụ:
 
@@ -318,7 +338,7 @@ Bạn muốn chạy kiểm thử từ `scripts` của `package.json` có thể c
 Chạy kiểm thử:
 
 ```sh
-yarn run test-dev .maestro/app.yaml
+yarn run test-prod .maestro/app.yaml
 ```
 
 

@@ -1,0 +1,10 @@
+# .maestro/constants.yaml
+appId: ${APP_ID} # applicationId
+env:
+  APP_ID: "com.rnmaestro"
+  TITLE: "Test title from env"
+---
+- launchApp
+- tapOn: "Enter your title"
+- inputText: ${TITLE}
+- assertVisible: ${TITLE}
