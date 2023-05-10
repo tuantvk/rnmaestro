@@ -25,11 +25,11 @@
 * 🇻🇳 [Tiếng Việt](VI_README.md)
 
 
-I used [Detox](https://wix.github.io/Detox/) to test React Native apps. At that time, Detox was so "cool", saving both the time and effort of the dev team and the tester team. However, later on, I saw the complexity, as well as the "difficulty" with new team members, that's when **Maestro** came to me as a savior. I know Maestro through an article on [dev.to](https://dev.to/), but my team's "noob" is truthly 😂 (but my teammates don't believe it).
+I used [Detox](https://wix.github.io/Detox/) to test React Native apps. At that time, Detox was so "cool", saving both the time and effort of the dev team and the tester team. However, later on, I saw the complexity, as well as the "difficulty" with new team members, that's when **Maestro** came to me as a savior. I know Maestro through an article on [dev.to](https://dev.to/), but my team's "noob" is truly 😂 (but my teammates don't believe it).
 
 
 ### Table of Contents
-* [What is Maestro ?](#what-is-maestro)
+* [What is Maestro?](#what-is-maestro)
 * [Setting up the development environment and initializing the app](#setting-up-the-development-environment-and-initializing-the-app)
 * [Installing Maestro](#installing-maestro)
 * [Test flows](#test-flows)
@@ -44,7 +44,7 @@ I used [Detox](https://wix.github.io/Detox/) to test React Native apps. At that 
 * [Videos testing of Maestro](#videos-testing-of-maestro)
 
 
-## What is Maestro ?
+## What is Maestro?
 
 [Maestro](https://maestro.mobile.dev/) is the simplest and most effective mobile UI testing framework. Maestro is built on learnings from its predecessors (Appium, Espresso, UIAutomator, XCTest) and allows you to easily define and test your Flows.
 

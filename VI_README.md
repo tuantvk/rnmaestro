@@ -29,7 +29,7 @@ Tôi đã từng sử dụng [Detox](https://wix.github.io/Detox/) để testing
 
 
 ### Nội dung:
-* [Maestro là cái gì ?](#maestro-là-cái-gì)
+* [Maestro là cái gì?](#maestro-là-cái-gì)
 * [Cài đặt môi trường và dự án React Native](#cài-đặt-môi-trường-và-dự-án-react-native)
 * [Cài đặt Maestro](#cài-đặt-maestro)
 * [Mô tả các bước test](#mô-tả-các-bước-test)
@@ -44,7 +44,7 @@ Tôi đã từng sử dụng [Detox](https://wix.github.io/Detox/) để testing
 * [Videos testing của Maestro](#videos-testing-của-maestro)
 
 
-## Maestro là cái gì ?
+## Maestro là cái gì?
 
 Tóm cái váy lại, [Maestro](https://maestro.mobile.dev/) là một framework giúp testing giao diện người dùng (UI) đơn giản và hiệu quả. Maestro dựa trên ý tưởng từ những người đàn anh đi trước như: Appium, Espresso, UIAutomator, XCTest. Sự khác biệt chủ yếu ở đây là Maestro viết test theo dạng Flows.
 
