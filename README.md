@@ -1,4 +1,4 @@
-# 🤖 Testing ứng dụng di động dễ dàng hơn với Maestro 👽
+# 🤖 Mobile app testing easier with Maestro 👽
 
 <p align="center">
   <a href="https://github.com/tuantvk/rnmaestro/issues">
@@ -15,37 +15,42 @@
   </a>
 </p>
 
-| ![Maestro Twitter Example](https://559345148-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2Fn5KVIOjVkVjYRyVWZ0yT%2Fuploads%2FBdkVbb4VQTkL4zLm6nvm%2Ftwitter_continuous_v3_fast.gif?alt=media&token=8a812b85-3b44-44f0-9137-3e74293b1acc) | 
+| ![Twitter Example](https://raw.githubusercontent.com/mobile-dev-inc/maestro-docs/main/.gitbook/assets/twitter_continuous_v3_fast.gif) | 
 |:--:| 
-| *Maestro Twitter Example - maestro.mobile.dev* |
+| *Twitter Example - maestro.mobile.dev* |
 
 
-Tôi đã từng sử dụng [Detox](https://wix.github.io/Detox/) để testing các ứng dụng viết bằng React Native. Tại thời điểm đó Detox khá "hịn" và bá đạo, tiết kiệm được cả khối thời gian cũng như công sức của đội dev và đội tester. Tuy nhiên sau này, tôi thấy độ phức tạp, cũng như độ "khó" với các thành viên mới trong team, đó là thời điểm **Maestro** đến với tôi như một vị cứu tinh. "Xạo quần" tí thôi chứ tôi biết Maestro qua một bài viết trên trang [dev.to](https://dev.to/), nhưng team tôi "gà" là sự thật 😂 (nhưng đồng đội tôi không tin vào điều đó).
+### Languages
+
+* 🇻🇳 [Tiếng Việt](VI_README.md)
 
 
-### Nội dung:
-* [Maestro là cái gì ?](#maestro-là-cái-gì)
-* [Cài đặt môi trường và dự án React Native](#cài-đặt-môi-trường-và-dự-án-react-native)
-* [Cài đặt Maestro](#cài-đặt-maestro)
-* [Mô tả các bước test](#mô-tả-các-bước-test)
+I used [Detox](https://wix.github.io/Detox/) to test React Native apps. At that time, Detox was so "cool", saving both the time and effort of the dev team and the tester team. However, later on, I saw the complexity, as well as the "difficulty" with new team members, that's when **Maestro** came to me as a savior. I know Maestro through an article on [dev.to](https://dev.to/), but my team's "noob" is truthly 😂 (but my teammates don't believe it).
+
+
+### Table of Contents
+* [What is Maestro ?](#what-is-maestro)
+* [Setting up the development environment and initializing the app](#setting-up-the-development-environment-and-initializing-the-app)
+* [Installing Maestro](#installing-maestro)
+* [Test flows](#test-flows)
 * [Maestro studio](#maestro-studio)
 * [Test case](#test-case)
-* [Kiểm tra phần tử bằng testID](#kiểm-tra-phần-tử-bằng-testid)
-* [Sử dụng biến](#sử-dụng-biến)
+* [Interaction with a component by testID](#interaction-with-a-component-by-testid)
+* [External parameters](#external-parameters)
 * [runFlow](#runflow)
-* [Quay màn hình](#quay-màn-hình)
+* [Recording your flow](#recording-your-flow)
 * [Tags](#tags)
-* [Testing trên cloud](#testing-trên-cloud)
-* [Videos testing của Maestro](#videos-testing-của-maestro)
+* [Maestro Cloud](#maestro-cloud)
+* [Videos testing of Maestro](#videos-testing-of-maestro)
 
 
-## Maestro là cái gì ?
+## What is Maestro ?
 
-Tóm cái váy lại, [Maestro](https://maestro.mobile.dev/) là một framework giúp testing giao diện người dùng (UI) đơn giản và hiệu quả. Maestro dựa trên ý tưởng từ những người đàn anh đi trước như: Appium, Espresso, UIAutomator, XCTest. Sự khác biệt chủ yếu ở đây là Maestro viết test theo dạng Flows.
+[Maestro](https://maestro.mobile.dev/) is the simplest and most effective mobile UI testing framework. Maestro is built on learnings from its predecessors (Appium, Espresso, UIAutomator, XCTest) and allows you to easily define and test your Flows.
 
-Flows là gì? Nôm na, Flows sẽ giống như một hành trình đi tìm ánh sáng phía cuối con hẻm cụt, đi từng bước từng bước qua những ngôi nhà, các bước test được viết trong file `yaml` hoặc `yml`. Nó giống như việc ta ra lệnh cho máy biết phải làm gì và kiểm tra gì. Đọc thêm tại [Why Maestro?](https://maestro.mobile.dev/#why-maestro)
+What are Flows? Think of Flows as parts of the user journey in your app. Login, Checkout and Add to Cart are three examples of possible Flows that can be defined and tested using Maestro. Declarative yet powerful syntax and write your tests in a `yaml` or `yml` file. Read more [Why Maestro?](https://maestro.mobile.dev/#why-maestro)
 
-Maestro hỗ trợ các nền tảng như:
+Platform Support:
 
 | Platform     | Support |
 |--------------| --------|
@@ -55,23 +60,23 @@ Maestro hỗ trợ các nền tảng như:
 | Flutter      | ✅ |
 | Web Views    | ✅ |
 
-Cá nhân tôi rất thích sử dụng Maestro cho testing ứng dụng di động. Quá trình cài đặt, viết test cũng hết sức dễ dàng với tất cả những ai chưa biết sử dụng máy tính Casio FX-570.
-Trong ví dụ này, tôi sẽ hướng dẫn các bạn cài đặt và viết một vài test case phổ biến. Tôi sử dụng Mac OS và ứng dụng đơn giản viết bằng React Native.
+Personally, I like using Maestro for mobile app testing. Installing and writing tests is also very easy for all those who do not know how to use the Casio FX-570 calculator.
+In this example, I will guide you to install and write some common test cases. I use Mac OS and a simple app written in React Native.
 
 
-## Cài đặt môi trường và dự án React Native
+## Setting up the development environment and initializing the app
 
-Đầu tiên, tất nhiên là bạn phải có ứng dụng cần testing rồi. Để tạo dự án React Native có thể tham khảo các bước đầy đủ tại [Setting up the development environment](https://reactnative.dev/docs/environment-setup).
+First, you must have the application to be tested. To create a React Native project, you can refer to the full steps at [Setting up the development environment](https://reactnative.dev/docs/environment-setup).
 
-Giả sử bạn đã có môi trường, tiến hành khởi tạo ứng dụng:
+Assuming you already have the environment, proceed with initializing the application:
 
 ```sh
 npx react-native init RNMaestro
 ```
 
-Sau khi khởi tạo xong bạn để ý **applicationId** của Android (`android/app/build.gradle -> applicationId`) và iOS (`Dự án trong Xcode -> Signing & Capabilities -> Bundle Identifier`). Bạn có thể tuỳ ý chỉnh sửa chúng để sử dụng sau này, trong hướng dẫn này tôi chỉnh sửa Android và iOS thành `com.rnmaestro`.
+After initialization, notice the **applicationId** of Android (`android/app/build.gradle -> applicationId`) and iOS (`Project in Xcode -> Signing & Capabilities -> Bundle Identifier`). You can optionally edit them for later use, in this tutorial I edit Android and iOS to `com.rnmaestro`.
 
-Tại file `App.tsx` của dự án, bạn copy & paste đoạn code phía dưới.
+In the `App.tsx` file of the project, copy & paste the code below.
 
 ```js
 // App.tsx
@@ -136,135 +141,135 @@ const App = () => {
 export default App;
 ```
 
-Hoặc bạn có thể sử dụng dự án của tôi (**bỏ qua bước dưới nếu không cần**):
+Or you can use my project (**skip step below if you don't use it**):
 
-* Clone dự án
+* Clone repository
 
 ```sh
 git clone https://github.com/tuantvk/rnmaestro.git
 ```
 
-* Cài đặt packages
+* Installing packages
 
 ```sh
 cd rnmaestro; yarn install
 ```
 
-* Pod (**dành cho iOS**)
+* Pod (**Only for iOS**)
 
 ```sh
 npx pod-install
 ```
 
 
-## Cài đặt Maestro
+## Installing Maestro
 
-Thông tin cài đặt cho Windows hoặc chi tiết các môi trường khác, vui lòng xem thêm ở tài liệu chính gốc [Installing Maestro
+For installation information for Windows or other environments, please refer to the official documentation [Installing Maestro
 ](https://maestro.mobile.dev/getting-started/installing-maestro).
 
-Cài đặt trên Mac OS, Linux:
+Run the following command to install Maestro on Mac OS, Linux:
 
 ```sh
 curl -Ls "https://get.maestro.mobile.dev" | bash
 ```
 
-Kiểm tra xem em hàng đã cài đặt thành công hay chưa:
+You can check if maestro is installed by checking the version:
 
 ```sh
 maestro -v
 ```
 
-Nếu thấy trả về các số dạng `vi.xxx.com` (ví dụ: 1.27.0) là đã thành công!
-Trong trường hợp máy báo `zsh: command not found: maestro`, hãy tắt terminal đi rồi mở lại.
+It should print the version number `vi.xxx.com` (E.g: 1.27.0).
+In case `zsh: command not found: maestro`, restart your terminal please.
 
-Để chạy trên máy ảo trên **iOS**, cần cài đặt thêm [Facebook IDB](https://fbidb.io/):
+Running flows on **iOS** Simulator requires installation of [Facebook IDB](https://fbidb.io/):
 
 ```sh
 brew tap facebook/fb
 brew install idb-companion
 ```
 
-> * Xcode khuyên nên dùng các phiên bản từ 14 trở nên.
-> * Một tin chẳng mấy vui, hiện tại, Tháng Năm 2023 Maestro chưa hỗ trợ chạy trên máy thật.
+> * Xcode recommended version is 14 or higher.
+> * Maestro can't interact with real iOS devices yet. Only Simulator is supported at the moment. (May 2023)
 
-Sau khi hoàn thành xong các bước trên là đã xong phần cài đặt. Bắt đầu vào phần viết test case.
+After completing the above steps, the installation is complete. Start on writing test cases.
 
 <p align="center">
   <img style="width:450px" src="https://media1.giphy.com/media/26u4lOMA8JKSnL9Uk/giphy.gif" alt="https://media1.giphy.com/media/26u4lOMA8JKSnL9Uk/giphy.gif" />
 <p>
 
 
-## Mô tả các bước test
+## Test flows
 
-Dựa vào chức năng của ứng dụng hiện tại, sẽ có một vài bước như sau:
+Based on the functionality of the current application, our workflow should look like this:
 
-1. Mở ứng dụng lên
-2. Nhấn nút `Add task` xem đã kiểm tra rỗng `TextInput` chưa
-3. Kiểm tra thông báo nếu rỗng
-4. Nhập `title`
-5. Nhấn nút `Add task`
-6. Kiểm tra task mới đã có chưa
+1. Start the app
+2. Press `Add task` button
+3. Check if empty message is visible
+4. Enter `title`
+5. Press `Add task` button
+6. Check if new task is visible
 
 
 ## Maestro studio
 
 <figure><img src="https://raw.githubusercontent.com/mobile-dev-inc/maestro-docs/main/.gitbook/assets/Screenshot%202023-03-10%20at%2013.23.54.png" alt=""><figcaption></figcaption></figure>
 
-Để dễ dàng xem được phần tử trong ứng dụng hoặc chạy trực tiếp các câu lệnh trên trình duyệt, ta có thể sử dụng **Maestro studio**.
+Use **Maestro Studio** to instantly discover the exact commands needed to interact with your app.
 
 ```sh
 maestro studio
 ```
 
-Sau khi chạy lệnh trên maestro sẽ mở một tab trên trình duyệt, mặc định sẽ là `http://localhost:9999`.
+Run the command above to launch Maestro Studio in your browser, default is `http://localhost:9999`.
 
 https://user-images.githubusercontent.com/30563960/236864010-3700e3c4-9fb8-4cee-bf59-b2755b3ae273.mp4
 
 
 ## Test case
 
-Tại thư mục gốc của dự án, tôi tạo file với đường dẫn `.maestro/app.yaml`.
+Create file `.maestro/app.yaml` in root folder of the project.
 
 ```yaml
 # .maestro/app.yaml
 appId: com.rnmaestro # applicationId
 ---
 - launchApp
-# Kiểm tra hiện thông báo "Title is required"
+# Check if "Title is required" is visible
 - tapOn: "Add task"
 - assertVisible: "Title is required"
 - tapOn: "OK"
 
-# Kiểm tra thêm task
+# Check if new task is visible
 - tapOn: "Enter your title"
 - inputText: "Task from maestro"
-- hideKeyboard # Lưu ý 1
+- hideKeyboard # Note 1
 - tapOn: "Add task"
 - assertVisible: "Task from maestro"
 ```
 
-> **Lưu ý 1**:
-> Trên iOS `hideKeyboard` có thể không ẩn được bàn phím, do vậy, tài liệu hướng dẫn khuyên nên sử dụng `tapOn` nhấn ra ngoài để có thể tắt được bàn phím. Xem thêm [iOS implementation caveat](https://maestro.mobile.dev/api-reference/commands/hidekeyboard#ios-implementation-caveat).
+> **Note 1**:
+> On iOS, `hideKeyboard` is done with help of scrolling up and down from the middle of the screen since there is no native API to hide the keyboard. If using this command doesn't hide the keyboard we recommend clicking on some non-tappable region with `tapOn` points command, similarly to how a user would hide the keyboard when interacting with your app. Read more [iOS implementation caveat](https://maestro.mobile.dev/api-reference/commands/hidekeyboard#ios-implementation-caveat).
 
-Để chạy file test case tôi sử dụng lệnh:
+Run the associated Flow using the `maestro test` command.
 
 ```sh
-# Chạy 1 file duy nhất
+# run single flow
 maestro test .maestro/app.yaml
-# hoặc
-# Chạy nhiều file trong thư mục
+# or
+# run all flows in a directory
 maestro test .maestro/
 ```
 
 https://user-images.githubusercontent.com/30563960/236864158-dbf562bc-1a98-4352-972a-e16ff68b8f3b.mp4
 
-Trong terminal sẽ như hình dưới:
+In ternimal looks similar to the image below:
 
 <p>
   <img style="width:700px" src="assets/logs.png" alt="tuantvk - maestro logs" />
 <p>
 
-Để tự động testing lại mỗi khi có thay đổi, bạn có thể chạy test với câu lệnh:
+Test will be automatically restarted whenever you make a change to the test file. This is particularly convenient when writing a new test from ground up. Run with `-c` argument.
 
 ```sh
 maestro test -c .maestro/app.yaml
@@ -282,36 +287,36 @@ maestro test -c .maestro/app.yaml
 | scrollUntilVisible | setLocation | stopApp | swipe |
 | takeScreenshot | tapOn | travel | waitForAnimationToEnd |
 
-Xem chi tiết tại [Maestro - Commands](https://maestro.mobile.dev/api-reference/commands).
+Read more [Maestro - Commands](https://maestro.mobile.dev/api-reference/commands).
 
-### Kiểm tra phần tử bằng `testID`
+### Interaction with a component by `testID`
 
-Trong ví dụ ở trên, tôi đã hướng dẫn viết flow bằng cách gọi trực tiếp vào các nội dung có trong màn hình. Tuy nhiên, sẽ có nhiều phần testing có nội dung thay đổi sau mỗi lần thao tác, do đó bạn cần phải sử dụng `testID` để xác định như: [View](https://reactnative.dev/docs/view#testid), [Button](https://reactnative.dev/docs/button#testid), [Text](https://reactnative.dev/docs/text#testid), [Image](https://reactnative.dev/docs/image#testid).
+In the example above, I was instructed to write the flow by calling the contents of the screen directly. However, there will be many testing parts whose content changes after each operation, so you need to use `testID` to identify like: [View](https://reactnative.dev/docs/view#testid), [Button](https://reactnative.dev/docs/button#testid), [Text](https://reactnative.dev/docs/text#testid), [Image](https://reactnative.dev/docs/image#testid).
 
-Ví dụ:
+Example:
 
 ```yaml
 # .maestro/app.yaml
 appId: com.rnmaestro # applicationId
 ---
 - launchApp
-# Kiểm tra hiện thông báo "Title is required"
+# Check if "Title is required" is visible
 - tapOn:
-    id: "btn_add_task" # testID ở đây
+    id: "btn_add_task" # testID here
 - assertVisible: "Title is required"
 - tapOn: "OK"
 ```
 
 
-### Sử dụng biến
+### External parameters
 
-Trong trường hợp cần truyền các biến từ bên ngoài vào file flow, ta có thể truyền theo dạng qua các tham số:
+There might be cases where you don't want to store certain values in a test file itself, you can pass parameters to Maestro:
 
 ```sh
 maestro test -e APP_ID=com.rnmaestro .maestro/app.yaml
 ```
 
-Tại các vị trí sử dụng theo cú pháp `${name}`:
+And then refer to them in your flow using `${name}` notation:
 
 ```yaml
 # .maestro/app.yaml
@@ -320,7 +325,7 @@ appId: ${APP_ID} # applicationId
 - launchApp
 ```
 
-Nếu như có quá nhiều biến cần khai báo, ta có thể viết toàn bộ vào key `env` trước dòng `---`:
+Constants can be declared at the flow file level, in key `env`, above the `---` marker:
 
 ```yaml
 # .maestro/app.yaml
@@ -331,7 +336,7 @@ env:
 - launchApp
 ```
 
-Bạn muốn chạy test từ `scripts` của `package.json` có thể config:
+If you want to run tests from `scripts` of `package.json` you can config:
 
 ```json
 {
@@ -343,12 +348,12 @@ Bạn muốn chạy test từ `scripts` của `package.json` có thể config:
 }
 ```
 
-Ở đây, tôi ví dụ có 2 môi trường là `dev` và `production`.
+In case, I have 2 environments `dev` and `production`.
 
-* `com.rnmaestro.dev` dành cho môi trường dev
-* `com.rnmaestro` dành cho môi trường production
+* `com.rnmaestro.dev` is for dev environments
+* `com.rnmaestro` is for production environments
 
-Chạy test:
+Run test:
 
 ```sh
 yarn run test-prod .maestro/app.yaml
@@ -357,7 +362,7 @@ yarn run test-prod .maestro/app.yaml
 
 ### runFlow
 
-Nếu như bạn không muốn bị trùng lặp các bước, phải viết đi viết lại 1 đoạn test nào đó, bạn có thể sử dụng `runFlow` để thực thi một luồng khác. Ví dụ:
+If you'd like to avoid duplication of code or otherwise modularize your Flow files, you can use the `runFlow` command to run commands from another file. Example:
 
 ```yaml
 # Login.yaml
@@ -375,30 +380,30 @@ appId: com.example.app
 # Settings.yaml
 appId: com.example.app
 ---
-- runFlow: Login.yaml # Testing từ file `Login.yaml`
+- runFlow: Login.yaml # Run commands from `Login.yaml`
 - tapOn: Settings
 - assertVisible: Switch to dark mode
 ```
 
-Xem thêm tại [Maestro - runFlow](https://maestro.mobile.dev/api-reference/commands/runflow).
+Read more [Maestro - runFlow](https://maestro.mobile.dev/api-reference/commands/runflow).
 
 
-### Quay màn hình
+### Recording your flow
 
-Để quay lại quá trình testing tôi sử dụng lệnh:
+Simply run the command below:
 
 ```sh
 maestro record .maestro/app.yaml
 ```
 
-Sau khi quá trình testing hoàn tất, maestro sẽ xuất ra một video định dạng `mp4` ghi lại toàn bộ quá trình.
+After testing is complete, maestro renders a beautiful `mp4` video recording the entire process.
 
-> Hiện tại, Maestro các phiên bản `CLI 1.26.0`, `CLI 1.26.1`, `CLI 1.27.0` tôi thấy tính năng `record` đang bị lỗi trên iOS, tuy nhiên đã được fix tại commit [2bd380d](https://github.com/mobile-dev-inc/maestro/commit/2bd380da5cb068da5704f313711530d89e0ba74f), nhưng chưa thấy release. Nếu bạn đang sử dụng các phiên bản trên, có thể tính năng quay màn hình sẽ không hoạt động (Ngày cập nhật: 2023-05-09).
+> Currently, Maestro versions `CLI 1.26.0`, `CLI 1.26.1`, `CLI 1.27.0`, `record` feature is not work on iOS, but it has been fixed at commit [2bd380d] (https://github.com/mobile-dev-inc/maestro/commit/2bd380da5cb068da5704f313711530d89e0ba74f), but no release yet. If you are using the above versions, it is possible that the screen recording feature will not work (Updated date: 2023-05-10).
 
 
 ## Tags
 
-Trong trường hợp bạn chỉ testing (`--include-tags`) hoặc loại bỏ (`--exclude-tags`) những file nào đó, bạn có thể sử dụng tags. Ví dụ tôi có 2 file:
+There is a couple of different use cases for this, but this is especially useful when you want to run some Flows at Pull Request time, and other Flows before a version release. The `--include-tags` will look for all flows containing the provided tag; it doesn't matter if those Flows also have other tags. On the other hand, the `--exclude-tags` parameter will remove from the list of Flows run any Flow that contains the provided tags. Example:
 
 ```yaml
 # flowA.yaml
@@ -419,22 +424,22 @@ tags:
 maestro test --include-tags=dev --exclude-tags=pull-request workspaceFolder/
 ```
 
-Một số kịch bản sẽ như sau:
+In the scenario above:
 
-* `--include-tags=dev`, flowA và flowB sẽ chạy.
-* `--include-tags=dev,pull-request`, cả 2 file sẽ chạy.
-* `--exclude-tags=pull-request`, chỉ flowB chạy.
-* `--exclude-tags=dev`, không file nào chạy.
-* `--include-tags=dev --exclude-tags=pull-request`, chỉ flowB chạy.
+* If they use `--include-tags=dev`, flowA and flowB will run.
+* If they use `--include-tags=dev,pull-request`, both flows will run.
+* If they use `--exclude-tags=pull-request`, only flowB will run.
+* If they use `--exclude-tags=dev` none Flow will run.
+* If they use `--include-tags=dev --exclude-tags=pull-request`, only flowB will run.
 
-Xem thêm [Maestro - Tags](https://maestro.mobile.dev/cli/tags).
+Read more [Maestro - Tags](https://maestro.mobile.dev/cli/tags).
 
 
-## Testing trên cloud
+## Maestro Cloud
 
-Ta có thể chạy Maestro Flows trên cloud qua tài liệu [Maestro Cloud Documentation](https://cloud.mobile.dev/).
+The easiest way to test your Flows in CI is to run your Flows on Maestro Cloud. Since your flows run in the cloud there's no need to configure any simulators or emulators on your end. Check out the [Maestro Cloud Documentation](https://cloud.mobile.dev/).
 
-Maestro Cloud hỗ trợ các nền tảng CI như:
+CI Support:
 
 | CI Platform    | Support via CLI | Native Intergation |
 |----------------|-----------------|--------------------|
@@ -445,10 +450,10 @@ Maestro Cloud hỗ trợ các nền tảng CI như:
 | GitLab CI/CD   | ✅ | 🚧 |
 | TravisCI       | ✅ | |
 | Jenkins        | ✅ | |
-| Tất cả các nền tảng CI khác | ✅ | |
+| All other CI platforms | ✅ | |
 
 
-## Videos testing của Maestro
+## Videos testing of Maestro
 
 * [Android contacts flow automation - maestro.mobile.dev](https://maestro.mobile.dev/examples/android-contacts-flow-automation)
 
@@ -461,7 +466,7 @@ Maestro Cloud hỗ trợ các nền tảng CI như:
 [![Facebook signup flow automation](https://i.vimeocdn.com/video/1537181939-8c4e67e47ff72aa7e14642a7fc104a662a457fabc20f6ce076b571d98f497a9d-d)](https://player.vimeo.com/video/765491505?h=21d7adf282)
 
 
-## Tham khảo thêm
+## Resources
 
 * Maestro: [https://maestro.mobile.dev/](https://maestro.mobile.dev/)
 * Maestro Cloud: [https://cloud.mobile.dev/](https://cloud.mobile.dev/)
@@ -475,14 +480,14 @@ Maestro Cloud hỗ trợ các nền tảng CI như:
   <img style="width:400px" src="https://media.tenor.com/blHCE4Hrc20AAAAd/bravo.gif" alt="https://media.tenor.com/blHCE4Hrc20AAAAd/bravo.gif" />
 <p>
 
-Maestro cũng còn rất mới với cộng đồng testing ứng dụng di động, còn nhiều vấn đề phải chỉnh sửa, nâng cấp. Tuy nhiên, rất xứng đáng để được 1 star trên [Maestro Github](https://github.com/mobile-dev-inc/maestro) cho đội ngũ phát triển.
+Maestro is also very new to the mobile application testing community, there are many issues to fix and upgrade. However, it is well deserved 1 star on the [Maestro Github](https://github.com/mobile-dev-inc/maestro) for the development team.
 
-🎉 🎉 🎉 **Hy vọng bài viết hữu ích với mọi người! Cảm ơn !** 🎉 🎉 🎉
+🎉 🎉 🎉 **Hope the article is useful to everyone! Thanks !** 🎉 🎉 🎉
 
 
-## Đóng góp
+## Contributions
 
-Mọi ý kiến cũng như đóng góp luôn được chào đón. Hãy tạo [Issues](https://github.com/tuantvk/rnmaestro/issues) hoặc [Pull requests](https://github.com/tuantvk/rnmaestro/pulls) cho tôi.
+Any comments and suggestions are always welcome. Please make [Issues](https://github.com/tuantvk/rnmaestro/issues) or [Pull requests](https://github.com/tuantvk/rnmaestro/pulls) for me.
 
 
 ## License
