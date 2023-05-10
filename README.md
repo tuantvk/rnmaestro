@@ -25,7 +25,7 @@
 * 🇻🇳 [Tiếng Việt](VI_README.md)
 
 
-I used [Detox](https://wix.github.io/Detox/) to test React Native apps. At that time, Detox was so "cool", saving both the time and effort of the dev team and the tester team. However, later on, I saw the complexity, as well as the "difficulty" with new team members, that's when **Maestro** came to me as a savior. I know Maestro through an article on [dev.to](https://dev.to/), but my team's "noob" is truly 😂 (but my teammates don't believe it).
+I used [Detox](https://wix.github.io/Detox/) to test React Native apps. At that time, Detox was so "cool", saving both the time and effort of the dev team and the tester team. However, later on, I saw the complexity, as well as the "difficulty" with new team members, and that's when **Maestro** came to me as a savior. I know Maestro through an article on [dev.to](https://dev.to/), but my team's "noob" is true 😂 (but my teammates don't believe it).
 
 
 ### Table of Contents
@@ -60,13 +60,13 @@ Platform Support:
 | Flutter      | ✅ |
 | Web Views    | ✅ |
 
-Personally, I like using Maestro for mobile app testing. Installing and writing tests is also very easy for all those who do not know how to use the Casio FX-570 calculator.
+I like using Maestro for mobile app testing. Installing and writing tests is also very easy for all those who do not know how to use the Casio FX-570 calculator.
 In this example, I will guide you to install and write some common test cases. I use Mac OS and a simple app written in React Native.
 
 
 ## Setting up the development environment and initializing the app
 
-First, you must have the application to be tested. To create a React Native project, you can refer to the full steps at [Setting up the development environment](https://reactnative.dev/docs/environment-setup).
+First, you must have the application to be tested. To create a React Native project, you can refer to the full steps in [Setting up the development environment](https://reactnative.dev/docs/environment-setup).
 
 Assuming you already have the environment, proceed with initializing the application:
 
@@ -74,7 +74,7 @@ Assuming you already have the environment, proceed with initializing the applica
 npx react-native init RNMaestro
 ```
 
-After initialization, notice the **applicationId** of Android (`android/app/build.gradle -> applicationId`) and iOS (`Project in Xcode -> Signing & Capabilities -> Bundle Identifier`). You can optionally edit them for later use, in this tutorial I edit Android and iOS to `com.rnmaestro`.
+After initialization, notice the **applicationId** of Android (`android/app/build.gradle -> applicationId`) and iOS (`Project in Xcode -> Signing & Capabilities -> Bundle Identifier`). You can optionally edit them for later use, in this tutorial, I edit Android and iOS to `com.rnmaestro`.
 
 In the `App.tsx` file of the project, copy & paste the code below.
 
@@ -141,7 +141,7 @@ const App = () => {
 export default App;
 ```
 
-Or you can use my project (**skip step below if you don't use it**):
+Or you can use my project (**skip the step below if you don't use it**):
 
 * Clone repository
 
@@ -192,7 +192,7 @@ brew install idb-companion
 > * Xcode recommended version is 14 or higher.
 > * Maestro can't interact with real iOS devices yet. Only Simulator is supported at the moment. (May 2023)
 
-After completing the above steps, the installation is complete. Start on writing test cases.
+After completing the above steps, the installation is complete. Start writing test cases.
 
 <p align="center">
   <img style="width:450px" src="https://media1.giphy.com/media/26u4lOMA8JKSnL9Uk/giphy.gif" alt="https://media1.giphy.com/media/26u4lOMA8JKSnL9Uk/giphy.gif" />
@@ -208,7 +208,7 @@ Based on the functionality of the current application, our workflow should look 
 3. Check if empty message is visible
 4. Enter `title`
 5. Press `Add task` button
-6. Check if new task is visible
+6. Check if the new task is visible
 
 
 ## Maestro studio
@@ -228,7 +228,7 @@ https://user-images.githubusercontent.com/30563960/236864010-3700e3c4-9fb8-4cee-
 
 ## Test case
 
-Create file `.maestro/app.yaml` in root folder of the project.
+Create file `.maestro/app.yaml` in the root folder of the project.
 
 ```yaml
 # .maestro/app.yaml
@@ -269,7 +269,7 @@ In terminal looks similar to the image below:
   <img style="width:700px" src="assets/logs.png" alt="tuantvk - maestro logs" />
 <p>
 
-Test will be automatically restarted whenever you make a change to the test file. This is particularly convenient when writing a new test from ground up. Run with `-c` argument.
+The test will be automatically restarted whenever you make a change to the test file. This is particularly convenient when writing a new test from ground up. Run with `-c` argument.
 
 ```sh
 maestro test -c .maestro/app.yaml
@@ -396,7 +396,7 @@ Simply run the command below:
 maestro record .maestro/app.yaml
 ```
 
-After testing is complete, maestro renders a beautiful `mp4` video recording the entire process.
+After testing is complete, maestro renders a beautiful `mp4` video recording of the entire process.
 
 > Currently, Maestro versions `CLI 1.26.0`, `CLI 1.26.1`, `CLI 1.27.0`, record feature is not work on iOS, but it has been fixed at commit [2bd380d](https://github.com/mobile-dev-inc/maestro/commit/2bd380da5cb068da5704f313711530d89e0ba74f), but no release yet. If you are using the above versions, it is possible that the screen recording feature will not work (Updated date: 2023-05-09).
 
@@ -441,7 +441,7 @@ The easiest way to test your Flows in CI is to run your Flows on Maestro Cloud. 
 
 CI Support:
 
-| CI Platform    | Support via CLI | Native Intergation |
+| CI Platform    | Support via CLI | Native Integration |
 |----------------|-----------------|--------------------|
 | GitHub Actions | ✅ | ✅ |
 | Bitrise        | ✅ | ✅ |
@@ -482,7 +482,7 @@ CI Support:
 
 Maestro is also very new to the mobile application testing community, there are many issues to fix and upgrade. However, it is well deserved 1 star on the [Maestro Github](https://github.com/mobile-dev-inc/maestro) for the development team.
 
-🎉 🎉 🎉 **Hope the article is useful to everyone! Thanks !** 🎉 🎉 🎉
+🎉 🎉 🎉 **Hope the article is useful to everyone! Thanks!** 🎉 🎉 🎉
 
 
 ## Contributions

@@ -441,7 +441,7 @@ Ta có thể chạy Maestro Flows trên cloud qua tài liệu [Maestro Cloud Doc
 
 Maestro Cloud hỗ trợ các nền tảng CI như:
 
-| CI Platform    | Support via CLI | Native Intergation |
+| CI Platform    | Support via CLI | Native Integration |
 |----------------|-----------------|--------------------|
 | GitHub Actions | ✅ | ✅ |
 | Bitrise        | ✅ | ✅ |
