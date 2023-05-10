@@ -263,7 +263,7 @@ maestro test .maestro/
 
 https://user-images.githubusercontent.com/30563960/236864158-dbf562bc-1a98-4352-972a-e16ff68b8f3b.mp4
 
-In ternimal looks similar to the image below:
+In terminal looks similar to the image below:
 
 <p>
   <img style="width:700px" src="assets/logs.png" alt="tuantvk - maestro logs" />
