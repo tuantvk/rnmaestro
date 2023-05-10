@@ -398,7 +398,7 @@ maestro record .maestro/app.yaml
 
 After testing is complete, maestro renders a beautiful `mp4` video recording the entire process.
 
-> Currently, Maestro versions `CLI 1.26.0`, `CLI 1.26.1`, `CLI 1.27.0`, `record` feature is not work on iOS, but it has been fixed at commit [2bd380d] (https://github.com/mobile-dev-inc/maestro/commit/2bd380da5cb068da5704f313711530d89e0ba74f), but no release yet. If you are using the above versions, it is possible that the screen recording feature will not work (Updated date: 2023-05-10).
+> Currently, Maestro versions `CLI 1.26.0`, `CLI 1.26.1`, `CLI 1.27.0`, record feature is not work on iOS, but it has been fixed at commit [2bd380d](https://github.com/mobile-dev-inc/maestro/commit/2bd380da5cb068da5704f313711530d89e0ba74f), but no release yet. If you are using the above versions, it is possible that the screen recording feature will not work (Updated date: 2023-05-09).
 
 
 ## Tags
