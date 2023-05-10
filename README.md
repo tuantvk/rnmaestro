@@ -205,7 +205,7 @@ Based on the functionality of the current application, our workflow should look 
 
 1. Start the app
 2. Press `Add task` button
-3. Check if empty message is visible
+3. Check if the empty message is visible
 4. Enter `title`
 5. Press `Add task` button
 6. Check if the new task is visible
@@ -398,7 +398,7 @@ maestro record .maestro/app.yaml
 
 After testing is complete, maestro renders a beautiful `mp4` video recording of the entire process.
 
-> Currently, Maestro versions `CLI 1.26.0`, `CLI 1.26.1`, `CLI 1.27.0`, record feature is not work on iOS, but it has been fixed at commit [2bd380d](https://github.com/mobile-dev-inc/maestro/commit/2bd380da5cb068da5704f313711530d89e0ba74f), but no release yet. If you are using the above versions, it is possible that the screen recording feature will not work (Updated date: 2023-05-09).
+> Currently, Maestro versions `CLI 1.26.0`, `CLI 1.26.1`, `CLI 1.27.0`, the record feature does not work on iOS, but it has been fixed at commit [2bd380d](https://github.com/mobile-dev-inc/maestro/commit/2bd380da5cb068da5704f313711530d89e0ba74f), but no release yet. If you are using the above versions, it is possible that the screen recording feature will not work (Updated date: 2023-05-09).
 
 
 ## Tags
